@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    
+    <Title>Learning JS</Title>    
+    
+</head>
+
+    <body>
+        
+        
+        <div style="background-color: darkorchid; width: 250px; padding: 20px;">
+            <form>
+                <input type="text" id="input_field" />
+                <input type="button" value="Compute" onclick="compute()" />   
+                <p id="out" style="color: white">Result : </p>
+            </form>
+        </div>
+        
+        
+        
+        
+        <script type="text/javascript">
+        
+            function cube(){
+                var number = document.getElementById("input_field").value;
+                var cubeNum = number*number*number;
+                document.getElementById("out").innerHTML = "Result : " + cubeNum;
+            }
+            
+            function compute(){
+                var input = document.getElementById("input_field").value;
+                var res = 0;
+                if(input.indexOf("+") != -1){
+                   var arr = input.split("+");
+                   var res = parseInt(arr[0]) + parseInt(arr[1]);
+                }else if(input.indexOf("-") != -1){
+                   var arr = input.split("-");
+                   var res = parseInt(arr[0]) - parseInt(arr[1]);      
+                }else if(input.indexOf("*") != -1){
+                   var arr = input.split("*");
+                   var res = parseInt(arr[0]) * parseInt(arr[1]);          
+                }else if(input.indexOf("/") != -1){
+                   var arr = input.split("/");
+                   var res = parseInt(arr[0]) / parseInt(arr[1]);      
+                }else{
+                    alert("Cannot Parse Input");
+                }
+                
+                document.getElementById("out").innerHTML = "Result : " + res;
+                
+            }
+        
+        </script>
+    
+    
+    </body>
+
+    
+    
+    
+
+</html>
